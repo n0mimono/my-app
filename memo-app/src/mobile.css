@@ -1,0 +1,110 @@
+/* Mobile-specific optimizations */
+
+/* Improve touch targets */
+@media (max-width: 768px) {
+  button, 
+  [role="button"],
+  input[type="button"],
+  input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve text input on mobile */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  /* Optimize scrolling */
+  .memo-list-content,
+  .memo-editor__textarea {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  /* Improve tap highlighting */
+  .memo-item,
+  .memo-editor__button,
+  .new-memo-button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Optimize for mobile keyboards */
+  .memo-editor__textarea {
+    padding-bottom: calc(var(--spacing-lg) + env(keyboard-inset-height, 0px));
+  }
+}
+
+/* iPhone X and newer safe areas */
+@supports (padding: max(0px)) {
+  .layout {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+  
+  .layout-header {
+    padding-top: max(var(--spacing-md), env(safe-area-inset-top));
+  }
+  
+  .memo-editor__content {
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Landscape mobile optimizations */
+@media (max-width: 768px) and (orientation: landscape) {
+  .layout-header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .layout-title {
+    font-size: 1.25rem;
+  }
+  
+  .memo-editor__header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Optimize for retina displays */
+  .loading-spinner {
+    border-width: 2px;
+  }
+  
+  .memo-item {
+    border-bottom-width: 0.5px;
+  }
+}
+
+/* Reduce animations on low-end devices */
+@media (max-width: 480px) {
+  .error-notification {
+    animation-duration: 0.2s;
+  }
+  
+  .delete-confirmation-dialog {
+    animation-duration: 0.15s;
+  }
+}
+
+/* Dark mode mobile optimizations */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+  .memo-editor__textarea {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+  }
+  
+  /* Improve contrast for mobile dark mode */
+  .memo-item-title {
+    color: var(--color-text-primary);
+  }
+  
+  .memo-item-date {
+    color: var(--color-text-secondary);
+  }
+}
