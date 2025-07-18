@@ -1,0 +1,164 @@
+/* LogoutButton コンポーネントのスタイル */
+
+.logout-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: inherit;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.logout-button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.logout-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* バリアント: primary */
+.logout-button--primary {
+  background-color: #dc2626;
+  color: white;
+}
+
+.logout-button--primary:hover:not(:disabled) {
+  background-color: #b91c1c;
+}
+
+.logout-button--primary:active:not(:disabled) {
+  background-color: #991b1b;
+}
+
+/* バリアント: secondary */
+.logout-button--secondary {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.logout-button--secondary:hover:not(:disabled) {
+  background-color: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.logout-button--secondary:active:not(:disabled) {
+  background-color: #d1d5db;
+}
+
+/* バリアント: text */
+.logout-button--text {
+  background-color: transparent;
+  color: #6b7280;
+  padding: 0.25rem 0.5rem;
+}
+
+.logout-button--text:hover:not(:disabled) {
+  color: #374151;
+  background-color: #f9fafb;
+}
+
+.logout-button--text:active:not(:disabled) {
+  background-color: #f3f4f6;
+}
+
+/* サイズ: small */
+.logout-button--small {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* サイズ: medium */
+.logout-button--medium {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* サイズ: large */
+.logout-button--large {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+/* ローディング状態 */
+.logout-button--loading {
+  position: relative;
+}
+
+.logout-button__spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: logout-button-spin 1s linear infinite;
+}
+
+@keyframes logout-button-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 640px) {
+  .logout-button--large {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .logout-button--medium {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+  
+  .logout-button--small {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .logout-button--secondary {
+    background-color: #374151;
+    color: #f9fafb;
+    border-color: #4b5563;
+  }
+  
+  .logout-button--secondary:hover:not(:disabled) {
+    background-color: #4b5563;
+    border-color: #6b7280;
+  }
+  
+  .logout-button--secondary:active:not(:disabled) {
+    background-color: #6b7280;
+  }
+  
+  .logout-button--text {
+    color: #9ca3af;
+  }
+  
+  .logout-button--text:hover:not(:disabled) {
+    color: #f3f4f6;
+    background-color: #374151;
+  }
+  
+  .logout-button--text:active:not(:disabled) {
+    background-color: #4b5563;
+  }
+}

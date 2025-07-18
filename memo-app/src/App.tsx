@@ -1,9 +1,11 @@
-import { useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useMemos } from './hooks/useMemos';
 import Layout from './components/Layout';
 import MemoList from './components/MemoList';
 import MemoEditor from './components/MemoEditor';
 import ErrorNotification from './components/ErrorNotification';
+import AuthProvider from './contexts/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
 import type { Memo } from './types/memo';
 import { StorageErrorType } from './utils/storage';
 import './App.css';
@@ -12,7 +14,18 @@ import './mobile.css';
 // Application view states
 type AppView = 'list' | 'editor';
 
-function App() {
+/**
+ * メモアプリケーションのメインコンポーネント
+ * 認証状態に基づく画面遷移機能を実装
+ * 
+ * 機能:
+ * - 認証状態に基づく画面遷移
+ * - 未認証時のログイン画面リダイレクト
+ * - 認証済み時のメモ帳画面表示
+ * 
+ * 要件: 5.1, 5.2, 5.3, 5.5
+ */
+const MemoApp: React.FC = () => {
   // Application state management
   const [currentView, setCurrentView] = useState<AppView>('list');
   const [selectedMemo, setSelectedMemo] = useState<Memo | null>(null);
@@ -184,6 +197,20 @@ function App() {
         </div>
       )}
     </>
+  );
+};
+
+/**
+ * アプリケーションのルートコンポーネント
+ * 認証プロバイダーと保護されたルートでメモアプリをラップ
+ */
+function App() {
+  return (
+    <AuthProvider>
+      <ProtectedRoute>
+        <MemoApp />
+      </ProtectedRoute>
+    </AuthProvider>
   );
 }
 

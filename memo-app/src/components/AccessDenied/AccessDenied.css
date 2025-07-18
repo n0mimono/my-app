@@ -1,0 +1,143 @@
+.access-denied {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb;
+  padding: 1rem;
+}
+
+.access-denied-container {
+  max-width: 500px;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+}
+
+.access-denied-icon {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.access-denied-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.access-denied-message {
+  margin-bottom: 2rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.access-denied-message p {
+  margin-bottom: 0.5rem;
+}
+
+.user-email {
+  background-color: #f3f4f6;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.user-email strong {
+  color: #1f2937;
+}
+
+.access-denied-explanation {
+  text-align: left;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #fef3c7;
+  border-radius: 8px;
+  border-left: 4px solid #f59e0b;
+}
+
+.access-denied-explanation h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #92400e;
+  margin-bottom: 1rem;
+}
+
+.access-denied-explanation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.access-denied-explanation li {
+  color: #92400e;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.access-denied-explanation li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #f59e0b;
+  font-weight: bold;
+}
+
+.access-denied-actions {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.5rem;
+}
+
+.retry-button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 1rem;
+}
+
+.retry-button:hover {
+  background-color: #2563eb;
+}
+
+.retry-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.contact-info {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .access-denied {
+    padding: 0.5rem;
+  }
+
+  .access-denied-container {
+    padding: 1.5rem;
+  }
+
+  .access-denied-title {
+    font-size: 1.25rem;
+  }
+
+  .access-denied-explanation {
+    padding: 1rem;
+  }
+}

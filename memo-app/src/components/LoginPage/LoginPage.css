@@ -1,0 +1,282 @@
+/* ログイン画面のスタイル */
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+  padding: var(--spacing-lg);
+}
+
+.login-container {
+  background-color: var(--color-bg-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-xl);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* ヘッダー */
+.login-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.login-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.login-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* コンテンツエリア */
+.login-content {
+  margin-bottom: var(--spacing-xl);
+}
+
+/* エラーメッセージ */
+.login-error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  text-align: left;
+}
+
+.login-error--access-denied {
+  background-color: #fef3cd;
+  border-color: #fde68a;
+}
+
+.login-error-message {
+  font-size: 0.875rem;
+  color: #dc2626;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.login-error--access-denied .login-error-message {
+  color: #d97706;
+}
+
+.login-error-details {
+  font-size: 0.8125rem;
+  color: #7c2d12;
+  line-height: 1.4;
+}
+
+/* Googleログインボタン */
+.google-login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: #ffffff;
+  border: 1px solid #dadce0;
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #3c4043;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.google-login-button:hover:not(:disabled) {
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.google-login-button:active:not(:disabled) {
+  background-color: #f1f3f4;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+}
+
+.google-login-button:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.google-login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Googleアイコン */
+.google-icon {
+  flex-shrink: 0;
+}
+
+/* ローディングスピナー */
+.login-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 再試行ボタン */
+.retry-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  margin-top: var(--spacing-md);
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.retry-button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.retry-button:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.retry-button:active {
+  background-color: var(--color-primary-active);
+}
+
+/* フッター */
+.login-footer {
+  border-top: 1px solid var(--color-border-light);
+  padding-top: var(--spacing-md);
+}
+
+.login-disclaimer {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .login-page {
+    background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+  }
+
+  .google-login-button {
+    background-color: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+  }
+
+  .google-login-button:hover:not(:disabled) {
+    background-color: #4a5568;
+  }
+
+  .google-login-button:active:not(:disabled) {
+    background-color: #2d3748;
+  }
+
+  .login-error {
+    background-color: #2d1b1b;
+    border-color: #742a2a;
+  }
+
+  .login-error--access-denied {
+    background-color: #2d2016;
+    border-color: #975a16;
+  }
+
+  .login-error-message {
+    color: #fc8181;
+  }
+
+  .login-error--access-denied .login-error-message {
+    color: #f6ad55;
+  }
+
+  .login-error-details {
+    color: #c05621;
+  }
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 480px) {
+  .login-page {
+    padding: var(--spacing-md);
+  }
+
+  .login-container {
+    padding: var(--spacing-lg);
+  }
+
+  .login-title {
+    font-size: 1.75rem;
+  }
+
+  .login-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .google-login-button {
+    padding: var(--spacing-md);
+    font-size: 0.875rem;
+  }
+}
+
+/* 高コントラストモード */
+@media (prefers-contrast: high) {
+  .login-container {
+    border: 2px solid var(--color-text-primary);
+  }
+
+  .google-login-button {
+    border: 2px solid var(--color-text-primary);
+  }
+
+  .login-error {
+    border: 2px solid var(--color-danger);
+  }
+
+  .login-error--access-denied {
+    border: 2px solid var(--color-warning);
+  }
+}
+
+/* アニメーション削減設定 */
+@media (prefers-reduced-motion: reduce) {
+  .login-spinner {
+    animation: none;
+  }
+
+  .google-login-button {
+    transition: none;
+  }
+
+  .retry-button {
+    transition: none;
+  }
+}

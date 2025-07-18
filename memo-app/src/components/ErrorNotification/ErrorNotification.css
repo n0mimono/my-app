@@ -46,6 +46,35 @@
   line-height: 1.4;
 }
 
+.error-notification__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-shrink: 0;
+}
+
+.error-notification__retry {
+  background: none;
+  border: 1px solid currentColor;
+  font-size: 12px;
+  cursor: pointer;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  color: inherit;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+}
+
+.error-notification__retry:hover:not(:disabled) {
+  background-color: currentColor;
+  color: white;
+}
+
+.error-notification__retry:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .error-notification__dismiss {
   background: none;
   border: none;

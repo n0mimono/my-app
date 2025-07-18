@@ -12,6 +12,7 @@
     "test:run": "vitest run"
   },
   "dependencies": {
+    "google-auth-library": "^10.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

@@ -12,7 +12,9 @@ This is a development workspace managed with Kiro, an AI-powered IDE assistant t
 ## Features
 
 ### Memo App
+
 A simple, efficient memo-taking application built with React and TypeScript. Features include:
+
 - Create, edit, and delete memos
 - Local storage persistence
 - Responsive design
@@ -30,6 +32,7 @@ This project follows Kiro's spec-driven development methodology:
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js (v18 or higher)
 - npm or yarn
 - Kiro IDE

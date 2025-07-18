@@ -1,0 +1,8 @@
+{
+  "googleClientId": "YOUR_GOOGLE_CLIENT_ID",
+  "allowedEmails": [
+    "developer@example.com",
+    "user@example.com"
+  ],
+  "version": "1.0.0"
+}

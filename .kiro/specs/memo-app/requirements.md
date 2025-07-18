@@ -6,62 +6,62 @@
 
 ## Requirements
 
-### Requirement 1
+### 要件 1
 
-**User Story:** As a user, I want to create new memos, so that I can quickly jot down my thoughts and ideas.
+**ユーザーストーリー:** ユーザーとして、新しいメモを作成したい。そうすることで、思考やアイデアを素早く書き留めることができる。
 
-#### Acceptance Criteria
+#### 受け入れ基準
 
-1. WHEN the user clicks the "新規メモ" button THEN the system SHALL display a new empty memo editor
-2. WHEN the user types in the memo editor THEN the system SHALL automatically save the content to local storage
-3. WHEN a new memo is created THEN the system SHALL assign it a unique ID and timestamp
+1. ユーザーが「新規メモ」ボタンをクリックしたとき、システムは新しい空のメモエディターを表示する
+2. ユーザーがメモエディターで入力したとき、システムは自動的にコンテンツをローカルストレージに保存する
+3. 新しいメモが作成されたとき、システムは一意の ID とタイムスタンプを割り当てる
 
-### Requirement 2
+### 要件 2
 
-**User Story:** As a user, I want to view a list of all my memos, so that I can easily find and access my notes.
+**ユーザーストーリー:** ユーザーとして、すべてのメモの一覧を表示したい。そうすることで、ノートを簡単に見つけてアクセスできる。
 
-#### Acceptance Criteria
+#### 受け入れ基準
 
-1. WHEN the user opens the app THEN the system SHALL display a list of all saved memos
-2. WHEN memos are displayed THEN the system SHALL show the title (first line) and creation date for each memo
-3. WHEN the memo list is empty THEN the system SHALL display a helpful message encouraging the user to create their first memo
+1. ユーザーがアプリを開いたとき、システムは保存されたすべてのメモの一覧を表示する
+2. メモが表示されるとき、システムは各メモのタイトル（最初の行）と作成日を表示する
+3. メモリストが空のとき、システムは最初のメモを作成することを促す有用なメッセージを表示する
 
-### Requirement 3
+### 要件 3
 
-**User Story:** As a user, I want to edit existing memos, so that I can update and refine my notes.
+**ユーザーストーリー:** ユーザーとして、既存のメモを編集したい。そうすることで、ノートを更新し、改良することができる。
 
-#### Acceptance Criteria
+#### 受け入れ基準
 
-1. WHEN the user clicks on a memo from the list THEN the system SHALL open that memo in edit mode
-2. WHEN the user modifies memo content THEN the system SHALL automatically save changes to local storage
-3. WHEN editing a memo THEN the system SHALL update the last modified timestamp
+1. ユーザーがリストからメモをクリックしたとき、システムはそのメモを編集モードで開く
+2. ユーザーがメモの内容を変更したとき、システムは自動的に変更をローカルストレージに保存する
+3. メモを編集するとき、システムは最終更新タイムスタンプを更新する
 
-### Requirement 4
+### 要件 4
 
-**User Story:** As a user, I want to delete memos I no longer need, so that I can keep my memo list organized.
+**ユーザーストーリー:** ユーザーとして、不要になったメモを削除したい。そうすることで、メモリストを整理された状態に保つことができる。
 
-#### Acceptance Criteria
+#### 受け入れ基準
 
-1. WHEN the user clicks the delete button on a memo THEN the system SHALL prompt for confirmation
-2. WHEN the user confirms deletion THEN the system SHALL remove the memo from local storage and update the display
-3. WHEN a memo is deleted THEN the system SHALL return to the memo list view
+1. ユーザーがメモの削除ボタンをクリックしたとき、システムは確認を求める
+2. ユーザーが削除を確認したとき、システムはローカルストレージからメモを削除し、表示を更新する
+3. メモが削除されたとき、システムはメモリストビューに戻る
 
-### Requirement 5
+### 要件 5
 
-**User Story:** As a user, I want my memos to persist between browser sessions, so that I don't lose my important notes.
+**ユーザーストーリー:** ユーザーとして、ブラウザセッション間でメモが保持されることを望む。そうすることで、重要なノートを失わずに済む。
 
-#### Acceptance Criteria
+#### 受け入れ基準
 
-1. WHEN the user closes and reopens the browser THEN the system SHALL restore all previously saved memos
-2. WHEN local storage is available THEN the system SHALL use it to persist memo data
-3. IF local storage is not available THEN the system SHALL display a warning message about data persistence
+1. ユーザーがブラウザを閉じて再度開いたとき、システムは以前に保存されたすべてのメモを復元する
+2. ローカルストレージが利用可能なとき、システムはそれを使用してメモデータを永続化する
+3. ローカルストレージが利用できない場合、システムはデータの永続化について警告メッセージを表示する
 
-### Requirement 6
+### 要件 6
 
-**User Story:** As a user, I want a clean and intuitive interface, so that I can focus on writing without distractions.
+**ユーザーストーリー:** ユーザーとして、クリーンで直感的なインターフェースを望む。そうすることで、気を散らされることなく執筆に集中できる。
 
-#### Acceptance Criteria
+#### 受け入れ基準
 
-1. WHEN the user interacts with the app THEN the system SHALL provide a responsive design that works on desktop and mobile
-2. WHEN displaying the interface THEN the system SHALL use clear typography and sufficient contrast for readability
-3. WHEN the user navigates between views THEN the system SHALL provide smooth transitions and clear visual feedback
+1. ユーザーがアプリを操作するとき、システムはデスクトップとモバイルで動作するレスポンシブデザインを提供する
+2. インターフェースを表示するとき、システムは読みやすさのために明確なタイポグラフィと十分なコントラストを使用する
+3. ユーザーがビュー間を移動するとき、システムはスムーズな遷移と明確な視覚的フィードバックを提供する
